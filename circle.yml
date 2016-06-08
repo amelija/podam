@@ -1,0 +1,12 @@
+machine:
+  services:
+    - docker
+  environment:
+    toolset_branch: master
+    server_type: circle
+    used_modules: check_cache,code_style_check,unit_test
+
+test:
+  post:
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
