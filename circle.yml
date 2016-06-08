@@ -1,8 +1,8 @@
 machine:
   timezone:
-    America/EST
+    America/Los_Angeles
   services:
-    docker
+    - docker
   environment:
     toolset_branch: master
     server_type: circle
